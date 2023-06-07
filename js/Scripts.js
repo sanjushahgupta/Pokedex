@@ -1,5 +1,6 @@
 
 //array of objects
+
 var pokemonList = [{
     name: "Caterpie", height: 3, types: ["Bug", "Runway"], weight: 1
 }, {
@@ -12,4 +13,4 @@ var pokemonList = [{
     name: "Persian", height: 1, types: ["Limber", "Unnerve"], weight: 32
 }]
 
-console.log(pokemonList[0].name);
+console.log(pokemonList[0].height);
