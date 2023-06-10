@@ -3,3 +3,25 @@ img{
     width: auto;
    padding-bottom:20px;
 }
+.container{
+    padding: 10px;
+    border-style: solid ;
+}
+
+.btn-class{
+    color:blue;
+    margin-top:8px;
+    padding:10px;
+    width: 60%;
+    height:auto;
+    font-size: 15px;
+}
+
+ul{
+   list-style-type: none;
+}
+
+h1{
+    padding:10px;
+    font-size: 24px;
+}

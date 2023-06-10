@@ -15,13 +15,33 @@ var pokemonRepository = (function () {
     }]
 
 
-    function add(pokemon) {
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector(".pokemon-list");
 
-        if (typeof pokemon === typeof pokemonList) {
-            pokemonList.push(pokemon);
-            // console.log(Object.keys(pokemon));
-            // console.log(Object.keys(pokemonList[0]));
-        }
+        //create li element and button element
+        let pokemonListItem = document.createElement("li");
+        let btn = document.createElement("button");
+
+        //add click eventListener
+        btn.addEventListener('click', function (event) {
+            showDetails(pokemon);
+        });
+
+        //set innerText to button as pokemon name
+        btn.innerText = pokemon.name;
+
+        //adding a class to the button
+        btn.classList.add('btn-class');
+
+        //append button as a child to pokemonListItem and pokemonListItem to pokemonList
+        pokemonListItem.appendChild(btn);
+        pokemonList.appendChild(pokemonListItem);
+
+    }
+
+    //calling this function when button is clicked
+    function showDetails(pokemon) {
+        console.log(pokemon.name);
     }
 
     function getAll() {
@@ -29,26 +49,20 @@ var pokemonRepository = (function () {
     }
 
     return {
-        add: add,
+        addListItem: addListItem,
         getAll: getAll
     }
-
 }
 )();
 
-pokemonRepository.add({ name: "New Bee", height: 1, types: ["Grass", "Poision"], weight: 9 });
+pokemonRepository.getAll().forEach(pokemon => {
+    pokemonRepository.addListItem(pokemon);
 
-pokemonRepository.getAll().forEach(item => {
-    let result = item.height > 9 ? "<b> -Wow that's big!</b>"
-        : ""
-    document.write(`${item.name} has height of ${item.height} ${result} <br>`);
 });
 
 
 
 
-/*var filterRes = pokemonRepository.getAll().filter(item => item.height > 9);
-console.log(filterRes);*/
 
 
 
