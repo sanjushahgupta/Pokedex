@@ -1,90 +1,103 @@
 
 var pokemonRepository = (function () {
-    let pokemonList = [{
-        name: "Caterpie", height: 3, types: ["Bug", "Runway"], weight: 1
-    }, {
-        name: "Ivysaur", height: 1, types: ["Grass", "poision"], weight: 13
-    },
-    {
-        name: "Persian", height: 12, types: ["Limber", "Unnerve"], weight: 32
-    },
-    {
-        name: "Butterfree", height: 7, types: ["Bug", "Flying"], weight: 32
-    }, {
-        name: "Gloom", height: 6, types: ["Grass", "Poision"], weight: 9
-    },
-    {
-        name: "Caterpie", height: 3, types: ["Bug", "Runway"], weight: 1
-    }, {
-        name: "Ivysaur", height: 1, types: ["Grass", "poision"], weight: 13
-    },
-    {
-        name: "Persian", height: 12, types: ["Limber", "Unnerve"], weight: 32
-    },
-    {
-        name: "Butterfree", height: 7, types: ["Bug", "Flying"], weight: 32
-    }, {
-        name: "Gloom", height: 6, types: ["Grass", "Poision"], weight: 9
-    },
-    {
-        name: "Caterpie", height: 3, types: ["Bug", "Runway"], weight: 1
-    }, {
-        name: "Ivysaur", height: 1, types: ["Grass", "poision"], weight: 13
-    },
-    {
-        name: "Persian", height: 12, types: ["Limber", "Unnerve"], weight: 32
-    },
-    {
-        name: "Butterfree", height: 7, types: ["Bug", "Flying"], weight: 32
-    }, {
-        name: "Gloom", height: 6, types: ["Grass", "Poision"], weight: 9
-    }]
+    let pokemonList = [];
+    let pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'
 
+    function addPokemon(pokemon) {
+        if (typeof pokemon === "object") {
+            pokemonList.push(pokemon);
+        }
+    }
 
+    //for css
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
-
-        //create li element and button element
         let pokemonListItem = document.createElement("li");
         let btn = document.createElement("button");
 
-        //add click eventListener
         btn.addEventListener('click', function (event) {
             showDetails(pokemon);
         });
 
-        //set innerText to button as pokemon name
         btn.innerText = pokemon.name;
-
-        //adding a class to the button
         btn.classList.add('btnPokomonList');
-
-        //append button as a child to pokemonListItem and pokemonListItem to pokemonList
         pokemonListItem.appendChild(btn);
         pokemonList.appendChild(pokemonListItem);
 
-    }
-
-    //calling this function when button is clicked
-    function showDetails(pokemon) {
-        console.log(pokemon.name);
     }
 
     function getAll() {
         return pokemonList;
     }
 
+    showLoadingMessage();
+
+    function loadList() {
+        return fetch(pokeApiUrl).then(response => {
+            hideLoadingMessage();
+            return response.json();
+        }).then(json => {
+            hideLoadingMessage();
+            json.results.forEach(item => {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url,
+                    height: item.height
+                };
+                addPokemon(pokemon);
+            })
+        }).catch(e => {
+            console.error(e);
+        })
+    }
+
+    function loadDetails(pokemon) {
+        let detailUrl = pokemon.detailsUrl;
+        return fetch(detailUrl).then(response => {
+            return response.json();
+        }).then(details => {
+            pokemon.imageUrl = details.sprites.front_default;
+            pokemon.height = details.height;
+        }).catch(e => {
+            console.error(e);
+        });
+    }
+
+    function showDetails(pokemone) {
+        loadDetails(pokemone).then(detail => {
+            console.log(pokemone);
+            return pokemone;
+        }).catch(e => {
+            console.error(e);
+        })
+
+    }
+
+    function showLoadingMessage() {
+        let pokemonList = document.querySelector(".pokemon-list");
+        pokemonList.innerText = "Loading";
+    }
+    function hideLoadingMessage() {
+        let pokemonList = document.querySelector(".pokemon-list");
+        pokemonList.innerText = "";
+    }
+
     return {
+        addPokemon: addPokemon,
         addListItem: addListItem,
-        getAll: getAll
+        getAll: getAll,
+        loadList: loadList,
+        loadDetails: loadDetails
     }
 }
 )();
 
-pokemonRepository.getAll().forEach(pokemon => {
-    pokemonRepository.addListItem(pokemon);
-
+pokemonRepository.loadList().then(it => {
+    pokemonRepository.getAll().forEach(pokemon => {
+        pokemonRepository.addListItem(pokemon);
+    });
 });
+
 
 
 
