@@ -12,6 +12,32 @@ var pokemonRepository = (function () {
         name: "Butterfree", height: 7, types: ["Bug", "Flying"], weight: 32
     }, {
         name: "Gloom", height: 6, types: ["Grass", "Poision"], weight: 9
+    },
+    {
+        name: "Caterpie", height: 3, types: ["Bug", "Runway"], weight: 1
+    }, {
+        name: "Ivysaur", height: 1, types: ["Grass", "poision"], weight: 13
+    },
+    {
+        name: "Persian", height: 12, types: ["Limber", "Unnerve"], weight: 32
+    },
+    {
+        name: "Butterfree", height: 7, types: ["Bug", "Flying"], weight: 32
+    }, {
+        name: "Gloom", height: 6, types: ["Grass", "Poision"], weight: 9
+    },
+    {
+        name: "Caterpie", height: 3, types: ["Bug", "Runway"], weight: 1
+    }, {
+        name: "Ivysaur", height: 1, types: ["Grass", "poision"], weight: 13
+    },
+    {
+        name: "Persian", height: 12, types: ["Limber", "Unnerve"], weight: 32
+    },
+    {
+        name: "Butterfree", height: 7, types: ["Bug", "Flying"], weight: 32
+    }, {
+        name: "Gloom", height: 6, types: ["Grass", "Poision"], weight: 9
     }]
 
 
@@ -31,7 +57,7 @@ var pokemonRepository = (function () {
         btn.innerText = pokemon.name;
 
         //adding a class to the button
-        btn.classList.add('btn-class');
+        btn.classList.add('btnPokomonList');
 
         //append button as a child to pokemonListItem and pokemonListItem to pokemonList
         pokemonListItem.appendChild(btn);

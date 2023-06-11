@@ -7,15 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/Styles.css">
+    <script src="https://kit.fontawesome.com/745f6fafa9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <img src="images/pikachu.png" alt="logo">
     <div class="container">
-        <h1>Pokedex</h1>
+        <img src="images/icon.png" alt="logo">
+        <h1>Pokédex</h1>
+        <form>
+            <input type="search" placeholder="Search...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+    <div class="list">
+
         <ul class="pokemon-list"></ul>
     </div>
+
+
     <script src="js/Scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tota11y/0.1.6/tota11y.js"
+        integrity="sha512-nHjpdf2PQfoPA2CGTV5L97UEPKj4TbnYtaIBFmicPSdCsw9T6ZQbEHr5kyQVguWLfXCKHxsESHtl56GZL3YLTQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
