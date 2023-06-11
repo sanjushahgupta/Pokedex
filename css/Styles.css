@@ -1,27 +1,60 @@
+body{
+    background-color:#00332e; 
+}
+*{
+    margin: 0px;
+}
 img{
-    height:50px;
+    height:75px;
     width: auto;
-   padding-bottom:20px;
 }
-.container{
-    padding: 10px;
-    border-style: solid ;
-}
-
-.btn-class{
-    color:blue;
-    margin-top:8px;
-    padding:10px;
-    width: 60%;
-    height:auto;
-    font-size: 15px;
-}
-
 ul{
    list-style-type: none;
 }
 
+
+form{
+    width: 100%;
+}
+form input{
+    width: 80%;
+    height: 38px;
+}
+
+form button{
+    width: 5%;
+    height: 38px;
+}
+
+form ::placeholder{
+    padding-left: 10px;
+}
+
+
+.btnPokomonList{
+    background-color:  #009688;
+    color:  black;
+    margin-top: 8px;
+    padding: 10px;
+    font-size: 19px;
+    width: 60%;
+    text-align: center;
+    border-color: transparent;
+    border-radius: 8px;
+}
+
+ul li {
+    height: 100%;
+    text-align: center;
+
+}
+.container{
+    width: 100%;
+    background-color:#00332e; 
+    padding: 20px;
+    margin-left: 40px;
+}
+
 h1{
-    padding:10px;
-    font-size: 24px;
+    color:  rgb(251, 202, 60);
 }
