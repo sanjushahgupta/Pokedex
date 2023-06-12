@@ -69,7 +69,7 @@ var pokemonRepository = (function () {
         }).catch(e => {
             console.error(e);
         })
-
+        showModal(pokemone.name);
     }
 
     function showLoadingMessage() {
@@ -77,19 +77,61 @@ var pokemonRepository = (function () {
         loadingDiv.classList.add('loadingDiv');
         let pokemonUL = document.querySelector("ul");
         pokemonUL.appendChild(loadingDiv);
-
     }
+
     function hideLoadingMessage() {
         let pokemonUL = document.querySelector("ul");
         pokemonUL.firstChild.remove();
     }
+
+    function showModal(pokemonName) {
+        let modalContainer = document.querySelector("#modal-container");
+        let modal = document.querySelector(".modal");
+        let title = document.createElement('h1');
+        title.innerText = pokemonName;
+        modal.appendChild(title);
+        modalContainer.appendChild(modal);
+        modalContainer.classList.add("isVisible");
+    }
+
+    //to hide modalContainerClose
+    let modalContainerClose = document.querySelector(".close");
+    modalContainerClose.addEventListener('click', event => {
+        hideModal();
+    })
+
+    window.addEventListener('keydown', e => {
+        let modalContainer = document.querySelector("#modal-container");
+        if (e.key === 'Escape' && modalContainer.classList.contains('isVisible')) {
+            hideModal();
+        }
+    })
+
+    let modalContainer = document.querySelector("#modal-container");
+    modalContainer.addEventListener('click', e => {
+        let target = e.target;
+        if (target === modalContainer) {
+            hideModal();
+        }
+    })
+
+
+
+    function hideModal() {
+        let modalContainer = document.querySelector("#modal-container");
+        modalContainer.classList.remove("isVisible");
+    }
+
+
 
     return {
         addPokemon: addPokemon,
         addListItem: addListItem,
         getAll: getAll,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        showModal: showModal,
+        hideModal: hideModal
     }
 }
 )();
@@ -99,6 +141,7 @@ pokemonRepository.loadList().then(it => {
         pokemonRepository.addListItem(pokemon);
     });
 });
+
 
 
 
