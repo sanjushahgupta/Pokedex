@@ -9,7 +9,6 @@ var pokemonRepository = (function () {
         }
     }
 
-    //for css
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
         let pokemonListItem = document.createElement("li");
@@ -34,7 +33,6 @@ var pokemonRepository = (function () {
 
     function loadList() {
         return fetch(pokeApiUrl).then(response => {
-            hideLoadingMessage();
             return response.json();
         }).then(json => {
             hideLoadingMessage();
@@ -47,6 +45,7 @@ var pokemonRepository = (function () {
                 addPokemon(pokemon);
             })
         }).catch(e => {
+            hideLoadingMessage();
             console.error(e);
         })
     }
@@ -74,12 +73,15 @@ var pokemonRepository = (function () {
     }
 
     function showLoadingMessage() {
-        let pokemonList = document.querySelector(".pokemon-list");
-        pokemonList.innerText = "Loading";
+        let loadingDiv = document.createElement('div');
+        loadingDiv.classList.add('loadingDiv');
+        let pokemonUL = document.querySelector("ul");
+        pokemonUL.appendChild(loadingDiv);
+
     }
     function hideLoadingMessage() {
-        let pokemonList = document.querySelector(".pokemon-list");
-        pokemonList.innerText = "";
+        let pokemonUL = document.querySelector("ul");
+        pokemonUL.firstChild.remove();
     }
 
     return {
