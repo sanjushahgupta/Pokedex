@@ -11,24 +11,28 @@
 </head>
 
 <body>
+
     <div class="container">
-        <img src="images/icon.png" alt="logo">
+        <img class="logo" src="images/icon.png" alt="logo">
         <h1>Pokédex</h1>
         <form>
             <input type="search" placeholder="Search...">
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>
+
     <div id="modal-container">
         <div class="modal">
-            <button class="close">X</button>
+            <img class="PokomoneImg" src="#" alt="">
+            <div class="Pokomonename"></div>
+            <div class="pokemonHeight"></div>
+            <button class="closeBtn">X</button>
         </div>
     </div>
+
     <ul class="pokemon-list"></ul>
-
-
     <script type="text/javascript" src="js/promise-polyfill.js"></script>
-    <script type="text/javascript" src="js/fetch-polyfill..js"></script>
+    <script type="text/javascript" src="js/fetch-polyfill.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tota11y/0.1.6/tota11y.js"
         integrity="sha512-nHjpdf2PQfoPA2CGTV5L97UEPKj4TbnYtaIBFmicPSdCsw9T6ZQbEHr5kyQVguWLfXCKHxsESHtl56GZL3YLTQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
