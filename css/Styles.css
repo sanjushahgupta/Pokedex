@@ -1,21 +1,24 @@
 body{
     background-color:#00332e; 
 }
+
 *{
     margin: 0px;
 }
-img{
+
+.logo{
     height:75px;
     width: auto;
 }
+
 ul{
    list-style-type: none;
 }
 
-
 form{
     width: 100%;
 }
+
 form input{
     width: 80%;
     height: 38px;
@@ -26,10 +29,9 @@ form button{
     height: 38px;
 }
 
-form ::placeholder{
+form::placeholder{
     padding-left: 10px;
 }
-
 
 .btnPokomonList{
     background-color:  #009688;
@@ -46,8 +48,8 @@ form ::placeholder{
 ul li {
     height: 100%;
     text-align: center;
-
 }
+
 .container{
     width: 100%;
     background-color:#00332e; 
@@ -55,24 +57,73 @@ ul li {
 }
 
 h1{
-    color:  rgb(251, 202, 60);
+    color:  #FFCC66;
 }
 
-
-.loadingDiv {
+    .loadingDiv {
     position:absolute;
     top:50%;
     left:50%;
-  width: 60px;
-  height:60px;
-  border-radius: 50%;
-  border: 2px solid white;
-  border-top:2px solid #00332e;
-  animation: loadingIcon 2s linear infinite;
-  }
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    border: 2px solid white;
+    border-top:2px solid #00332e;
+    animation: loadingIcon 2s linear infinite;
+    }
 
   @keyframes loadingIcon {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }    
  
+  #modal-container{
+    display:none;
+  }
+
+  #modal-container.isVisible{
+    position:fixed;
+    top:0;
+    left:0;
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+    padding:20px;
+    background-color: rgba(0,0,0,0.5);
+    z-index:999;
+    overflow:auto;
+    display: grid;
+    text-align: center;
+  }
+
+  .modal{
+    position: relative;
+    margin: auto;
+    display: inline;
+    background-color: aliceblue;
+    padding-bottom: 10px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .closeBtn{
+    position: absolute;
+    top:8px;
+    right:8px;
+    background: none;
+    color: #090909;
+  }
+
+.PokomoneImg{
+height: 150px;
+width: auto;
+}
+
+.Pokomonename{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pokemonHeight{
+    font-size: 20px;
+}
