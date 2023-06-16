@@ -11,6 +11,9 @@ body, .list-group-item{
     width: auto;
 }
 
+.form-control::placeholder{
+  text-align: center;
+}
 @media (min-width: 570px) {
     .list-group {
       grid-template-columns: repeat(2, 1fr);
@@ -43,15 +46,8 @@ h1{
 }
 
 
-.pokemonHeight{
-    font-size: 20px;
-    text-align: center;
-}
 
-.PokomoneImg{
-    width: 200px;
-    height: auto;
-}
+
 
 
 
