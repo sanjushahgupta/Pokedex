@@ -97,8 +97,7 @@ var pokemonRepository = (function () {
         loadDetails(pokemon).then(() => {
             showModal(pokemon.name, pokemon.height, pokemon.imageUrl, pokemon.weight);
             return pokemon;
-        }).catch(e => {
-            console.error(e);
+        }).catch(() => {
         });
     }
 
