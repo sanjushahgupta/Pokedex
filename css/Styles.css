@@ -6,6 +6,7 @@ body, .list-group-item{
     background-color:  #c4cbe0;
 }
 
+
 .logo{
     height:78px;
     width: auto;
@@ -14,6 +15,7 @@ body, .list-group-item{
 .form-control::placeholder{
   text-align: center;
 }
+
 @media (min-width: 570px) {
     .list-group {
       grid-template-columns: repeat(2, 1fr);
