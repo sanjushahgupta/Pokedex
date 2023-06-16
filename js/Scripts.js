@@ -81,12 +81,10 @@ var pokemonRepository = (function () {
             let listBtn = pokemon.querySelector(".btn-secondary").innerText.toLowerCase();
             if (listBtn.includes(searchInput)) {
                 pokemon.style.display = "inline-block";
-                return;
             } else {
                 pokemon.style.display = "none";
             }
         });
-
     };
 
     let searchInput = document.querySelector("#input");
