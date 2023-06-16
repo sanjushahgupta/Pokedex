@@ -78,9 +78,8 @@ var pokemonRepository = (function () {
         let listArray = document.querySelectorAll('.list-group-item');
 
         listArray.forEach(pokemon => {
-            let listBtn = pokemon.querySelector('.btn-secondary').innerText.toLowerCase();
             let searchList = document.querySelector('.list-group');
-
+            let listBtn = pokemon.querySelector('.btn-secondary').innerText.toLowerCase();
             if (listBtn.includes(searchInput)) {
                 pokemon.style.display = 'inline-block';
                 return;
@@ -88,10 +87,12 @@ var pokemonRepository = (function () {
                 pokemon.style.display = 'none';
             }
         });
+
     }
 
     let searchInput = document.querySelector('#input');
     searchInput.addEventListener('input', () => searchItem());
+
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(detail => {
@@ -122,13 +123,14 @@ var pokemonRepository = (function () {
         let height = document.querySelector(".pokemonHeight");
         let imgDetails = document.querySelector(".PokomoneImg");
         let weight = document.querySelector('.pokemonWeight');
-        weight.innerText = "Weight: " + pokemonWeight;
-        height.innerText = "Height: " + pokemonHeight;
+        weight.innerText = "Weight: " + pokemonWeight + " M";
+        height.innerText = "Height: " + pokemonHeight + " KG";
         imgDetails.src = pokemonImage;
     }
 
 
     window.addEventListener('keydown', e => {
+        e.preventDefault()
         let modalContainer = document.querySelector("#exampleModal");
         if (e.key === 'Escape' && modalContainer.classList.contains('isVisible')) {
             hideModal();
@@ -142,6 +144,7 @@ var pokemonRepository = (function () {
 
     let modalContainer = document.querySelector("#exampleModal");
     modalContainer.addEventListener('click', e => {
+        e.preventDefault();
         let target = e.target;
         if (target === modalContainer) {
             hideModal();

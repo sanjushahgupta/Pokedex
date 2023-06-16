@@ -11,6 +11,9 @@ body, .list-group-item{
     width: auto;
 }
 
+.form-control::placeholder{
+  text-align: center;
+}
 @media (min-width: 570px) {
     .list-group {
       grid-template-columns: repeat(2, 1fr);
