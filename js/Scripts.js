@@ -126,7 +126,7 @@ var pokemonRepository = (function () {
 
 
     window.addEventListener("keydown", e => {
-       
+
         let modalContainer = document.querySelector("#exampleModal");
         if (e.key === "Escape" && modalContainer.classList.contains("isVisible")) {
             hideModal();
@@ -140,7 +140,7 @@ var pokemonRepository = (function () {
 
     let modalContainer = document.querySelector("#exampleModal");
     modalContainer.addEventListener("click", e => {
-  
+
         let target = e.target;
         if (target === modalContainer) {
             hideModal();
@@ -165,7 +165,7 @@ var pokemonRepository = (function () {
 }
 )();
 
-pokemonRepository.loadList().then(()=> {
+pokemonRepository.loadList().then(() => {
     pokemonRepository.getAll().forEach(pokemon => {
         pokemonRepository.addListItem(pokemon);
     });
