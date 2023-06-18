@@ -3,25 +3,30 @@
 
 This is a web application that allows users to fetch data from an API and display details about Pokémon. 
 
-
-
 ## Features
 - Fetch Pokémon Data
 - Display Pokémon Data
 - Search by Pokémon Name
 
-## Technologies Used
-The following technologies were used to build the Pokomen application:
+## Screenshot 
+<img width="1417" alt="Screenshot 2023-06-18 at 10 39 56" src="https://github.com/sanjushahgupta/Pokedex/assets/71315276/74ee45a4-3ce7-4dd7-818d-38a9fcf87532">
+
+## Live Demo:
+https://github.com/sanjushahgupta/Pokedex/assets/71315276/e65d7485-894c-496b-8748-59943faa998c
+
+## Links
+Live Site URL: [Pokémon App](https://sanjushahgupta.github.io/Pokedex/)
+
+## Built with
 - JavaScript
 - Bootstrap
 - jQuery.
 - Fetch API
-## Usage
-To use the Pokomen application, follow these steps:
+
+## Run Locally
 - Clone the repository or download the project files.
 - Open the index.html file in a web browser.
-- The application will load and display a list of Pokémon.
-- To search for a specific Pokémon, enter the Pokémon's name in the search box.
+
 
 ## Contributions
 Contributions to the Pokomen application are always welcome. 
