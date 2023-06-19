@@ -119,8 +119,8 @@ var pokemonRepository = (function () {
         let height = document.querySelector(".pokemonHeight");
         let imgDetails = document.querySelector(".PokomoneImg");
         let weight = document.querySelector(".pokemonWeight");
-        weight.innerText = "Weight: " + pokemonWeight + " M";
-        height.innerText = "Height: " + pokemonHeight + " KG";
+        weight.innerText = "Weight: " + pokemonWeight + "KG";
+        height.innerText = "Height: " + pokemonHeight + "M";
         imgDetails.src = pokemonImage;
     }
 
