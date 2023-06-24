@@ -9,7 +9,7 @@ This is a web application that allows users to fetch data from an API and displa
 - Search by Pokémon Name
 
 ## Screenshot 
-<img width="1417" alt="Screenshot 2023-06-18 at 10 39 56" src="https://github.com/sanjushahgupta/Pokedex/assets/71315276/74ee45a4-3ce7-4dd7-818d-38a9fcf87532">
+<img width="500" alt="Screenshot 2023-06-18 at 10 39 56" src="https://github.com/sanjushahgupta/Pokedex/assets/71315276/74ee45a4-3ce7-4dd7-818d-38a9fcf87532">
 
 ## Live Demo:
 https://github.com/sanjushahgupta/Pokedex/assets/71315276/e65d7485-894c-496b-8748-59943faa998c
